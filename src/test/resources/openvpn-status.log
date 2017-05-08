@@ -1,0 +1,14 @@
+OpenVPN CLIENT LIST
+Updated,Mon May  8 18:06:38 2017
+Common Name,Real Address,Bytes Received,Bytes Sent,Connected Since
+hades,46.244.106.45:57442,9286424,755968053,Mon May  8 16:20:05 2017
+oldhades,78.96.220.139:52513,756683711,9175967,Mon May  8 16:40:04 2017
+aphrodite,78.96.220.139:2871,455116,359125,Mon May  8 05:27:09 2017
+ROUTING TABLE
+Virtual Address,Common Name,Real Address,Last Ref
+10.8.0.2,oldhades,78.96.220.139:52513,Mon May  8 18:06:37 2017
+10.8.0.5,aphrodite,78.96.220.139:2871,Mon May  8 15:05:40 2017
+10.8.0.3,hades,46.244.106.45:57442,Mon May  8 18:06:37 2017
+GLOBAL STATS
+Max bcast/mcast queue length,28
+END
