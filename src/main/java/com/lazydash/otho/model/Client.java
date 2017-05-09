@@ -1,4 +1,4 @@
-package com.lazydash.vpn.web.model;
+package com.lazydash.otho.model;
 
 /**
  * Created by valiuv on 5/8/2017.

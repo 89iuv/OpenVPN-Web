@@ -1,7 +1,7 @@
-package com.lazydash.vpn.web.service;
+package com.lazydash.otho.service;
 
-import com.lazydash.vpn.web.config.AppConfig;
-import com.lazydash.vpn.web.model.Client;
+import com.lazydash.otho.config.AppConfig;
+import com.lazydash.otho.model.Client;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

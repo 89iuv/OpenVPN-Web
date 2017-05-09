@@ -1,4 +1,4 @@
-package com.lazydash.vpn.web.config;
+package com.lazydash.otho.config;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;

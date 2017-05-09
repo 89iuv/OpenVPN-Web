@@ -1,6 +1,6 @@
-package com.lazydash.vpn.web;
+package com.lazydash.otho;
 
-import com.lazydash.vpn.web.model.Client;
+import com.lazydash.otho.model.Client;
 import org.junit.Test;
 
 import java.nio.file.Files;

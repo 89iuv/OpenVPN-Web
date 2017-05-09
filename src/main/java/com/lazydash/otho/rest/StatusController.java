@@ -1,7 +1,7 @@
-package com.lazydash.vpn.web.rest;
+package com.lazydash.otho.rest;
 
-import com.lazydash.vpn.web.service.LinuxService;
-import com.lazydash.vpn.web.model.Client;
+import com.lazydash.otho.service.LinuxService;
+import com.lazydash.otho.model.Client;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
