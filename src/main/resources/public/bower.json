@@ -1,0 +1,22 @@
+{
+  "name": "openvpn-web",
+  "description": "",
+  "main": "script.js",
+  "authors": [
+    "Valentin Uveges <valentin.uveges@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/89iuv/OpenVPN-Web",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.6.4",
+    "bootstrap": "^3.3.7"
+  }
+}
