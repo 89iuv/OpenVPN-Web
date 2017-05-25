@@ -9,7 +9,7 @@ openVpnWeb.controller("StatusClientsController", ["$scope", "$http", function($s
     })();
 
     function updateClients(){
-        $http.get("/status/clients").then(function(response){
+        $http.get("/openvpn/status/clients").then(function(response){
             $scope.clients = response.data;
 
         }, function(response){
