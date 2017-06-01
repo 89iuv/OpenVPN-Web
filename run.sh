@@ -15,5 +15,4 @@ sed -i 's|src/test/resources/openvpn-status.log|/etc/openvpn/openvpn-status.log|
 
 #run application
 cd ./target/
-kill `ps -C "java -jar ./otho-1.0-SNAPSHOT.jar" -o pid=`
 nohup java -jar ./otho-1.0-SNAPSHOT.jar &
