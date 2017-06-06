@@ -1,4 +1,4 @@
-var openVpnWeb = angular.module("openvpn-web", []);
+var openVpnWeb = angular.module("otho", []);
 
 openVpnWeb.controller("StatusClientsController", ["$scope", "$http", function($scope, $http){
     $scope.clients = [];
