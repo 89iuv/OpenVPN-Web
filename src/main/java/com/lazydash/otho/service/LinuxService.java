@@ -72,7 +72,6 @@ public class LinuxService {
 
                 client.setCommonName(name);
             }
-
         }
     }
 
