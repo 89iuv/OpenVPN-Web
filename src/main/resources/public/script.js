@@ -10,8 +10,9 @@ openVpnWeb.controller("StatusClientsController", ["$scope", "$http", function($s
 
     function updateClients(){
         $http.get("/otho/status/clients").then(function(response){
-            var clients = response.data;
-            $scope.clients = _.sortBy(clients, [function(client){ return client.commonName; }]);
+            $scope.clients = response.data;
+            $scope.clients = _.sortBy($scope.clients, [function(client){ return client.commonName; }]);
+            $scope.clients = _.sortBy($scope.clients, [function(client){ return !client.connected; }]);
 
         }, function(response){
             console.log(response);
