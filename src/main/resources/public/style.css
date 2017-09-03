@@ -1,0 +1,7 @@
+.client-connected {
+    border-left: 3px solid green;
+}
+
+.client-disconnected {
+    border-left: 3px solid red;
+}

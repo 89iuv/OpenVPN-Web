@@ -1,0 +1,6 @@
+oldhades,10.8.0.2
+hades,10.8.0.3
+ares,10.8.0.4
+aphrodite,10.8.0.5
+zeus,10.8.0.6
+apollo,10.8.0.7
