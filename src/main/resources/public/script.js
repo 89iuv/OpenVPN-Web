@@ -1,10 +1,11 @@
 var openVpnWeb = angular.module("otho", []);
 
-openVpnWeb.controller("StatusClientsController", ["$scope", "$http", function($scope, $http){
+openVpnWeb.controller("StatusClientsController", ["$scope", "$http", "$interval", function($scope, $http, $interval){
     $scope.clients = [];
 
     (function main(){
         updateClients();
+        $interval(updateClients, 60*1000);
 
     })();
 

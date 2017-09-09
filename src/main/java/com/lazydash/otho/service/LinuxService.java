@@ -10,6 +10,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Optional;
 
@@ -28,10 +29,11 @@ public class LinuxService {
         this.appConfig = appConfig;
     }
 
-    public void updateClientsWithStatusInfo(List<Client> clients) {
+    public List<Client> getConnectedClients() {
         Path openvpnStatusPath = Paths.get(appConfig.getOpenvpnStatusFile());
         List<String> lines = getLinesFromPath(openvpnStatusPath);
 
+        List<Client> clients = new LinkedList<>();
         for (String line : lines) {
             if (line.matches(clientListRegex)){
                 String[] words = line.split(",");
@@ -43,7 +45,6 @@ public class LinuxService {
                 client.setBytesReceived(words[2]);
                 client.setBytesSent(words[3]);
                 client.setConnectedSince(words[4]);
-                client.setConnected(true);
 
             } else if (line.matches(routingTableRegex)){
                 String[] words = line.split(",");
@@ -56,34 +57,8 @@ public class LinuxService {
 
             };
         }
-    }
 
-    public void updateClientsWithCertificateInfo(List<Client> clients){
-        Path openvpnIndexPath = Paths.get(appConfig.getOpenvpnIndexFile());
-        List<String> lines = getLinesFromPath(openvpnIndexPath);
-
-        for (String line: lines){
-            String[] columns = line.split(" +");
-            if (columns[0].equals("V")){
-                String[] split = columns[4].split("\\/");
-                String name = split[6].split("=")[1];
-
-                Client client = getClientFromClientsByName(clients, name);
-
-                client.setCommonName(name);
-            }
-        }
-    }
-
-    public void updateClientsWithRoutingInfo(List<Client> clients){
-        Path openvpnIppPath = Paths.get(appConfig.getOpenvpnIppFile());
-        List<String> lines = getLinesFromPath(openvpnIppPath);
-
-        lines.forEach(line -> {
-            String[] words = line.split(",");
-            Client client = getClientFromClientsByName(clients, words[0]);
-            client.setVirtualAddress(words[1]);
-        });
+        return clients;
     }
 
     private Client getClientFromClientsByName(List<Client> clients, String name){

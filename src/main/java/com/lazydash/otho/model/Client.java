@@ -11,7 +11,6 @@ public class Client {
     private String connectedSince;
     private String lastRef;
     private String virtualAddress;
-    private boolean connected;
 
     public Client(String commonName) {
         this.commonName = commonName;
@@ -73,14 +72,6 @@ public class Client {
         this.lastRef = lastRef;
     }
 
-    public boolean isConnected() {
-        return connected;
-    }
-
-    public void setConnected(boolean connected) {
-        this.connected = connected;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -88,7 +79,6 @@ public class Client {
 
         Client client = (Client) o;
 
-        if (connected != client.connected) return false;
         if (commonName != null ? !commonName.equals(client.commonName) : client.commonName != null) return false;
         if (realAddress != null ? !realAddress.equals(client.realAddress) : client.realAddress != null) return false;
         if (bytesReceived != null ? !bytesReceived.equals(client.bytesReceived) : client.bytesReceived != null)
@@ -109,7 +99,6 @@ public class Client {
         result = 31 * result + (connectedSince != null ? connectedSince.hashCode() : 0);
         result = 31 * result + (lastRef != null ? lastRef.hashCode() : 0);
         result = 31 * result + (virtualAddress != null ? virtualAddress.hashCode() : 0);
-        result = 31 * result + (connected ? 1 : 0);
         return result;
     }
 
@@ -123,7 +112,6 @@ public class Client {
                 ", connectedSince='" + connectedSince + '\'' +
                 ", lastRef='" + lastRef + '\'' +
                 ", virtualAddress='" + virtualAddress + '\'' +
-                ", connected=" + connected +
                 '}';
     }
 }
