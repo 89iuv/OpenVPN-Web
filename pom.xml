@@ -40,13 +40,31 @@
 
     </dependencies>
 
+    <profiles>
+        <profile>
+            <id>Prod</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <configuration.location>src\main\resources\application.properties</configuration.location>
+            </properties>
+        </profile>
+        <profile>
+            <id>Dev</id>
+            <properties>
+                <configuration.location>src\test\resources\application.properties</configuration.location>
+            </properties>
+        </profile>
+    </profiles>
+
     <build>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                    <arguments>--spring.config.location=src\test\resources\application.properties</arguments>
+                    <arguments>--spring.config.location=${configuration.location}</arguments>
                 </configuration>
             </plugin>
         </plugins>
